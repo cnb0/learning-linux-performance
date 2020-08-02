@@ -1,3 +1,4 @@
+```
 1. Tools Method
         - The tools method is a process of iterating over available tools, 
           examining key metrics they provide. While this is a simple methodology, 
