@@ -7,8 +7,8 @@
 - If you use Linux, you have extraordinary advantages: complete source code access, plus an exceptional 
   array of optimization tools. 
 - But the tools are scattered across the Internet. Many are poorly documented. And few experts know how to use them
-  together to solve real problems. Now, one of those experts has written the definitive Linux tuning primer for every professional: 
-  Optimizing Linux® Performance.
+  together to solve real problems. Now, one of those experts has written the definitive Linux tuning primer 
+  for every professional:   Optimizing Linux® Performance.
 
 Linux optimization tools,showing how they fit into a proven methodology for perfecting overall application performance. 
 shows developers how to pinpoint exact lines of source code that are impacting performance. 
@@ -178,7 +178,8 @@ How to:
                                         9.4.10. Is the System Using Network I/O?
                         9.5. Optimizing Process CPU Usage
                                         9.5.1. Is the Process Spending Time in User or Kernel Space?
-                                        9.5.2. Which System Calls Is the Process Making, and How Long Do They Take to Complete?
+                                        9.5.2. Which System Calls Is the Process Making, and How Long Do 
+                                               They Take to Complete?
                                         9.5.3. In Which Functions Does the Process Spend Time?
                                         9.5.4. What Is the Call Tree to the Hot Functions?
                                         9.5.5. Do Cache Misses Correspond to the Hot Functions or Source Lines?
