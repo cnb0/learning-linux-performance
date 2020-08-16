@@ -20,7 +20,8 @@ How to:
     - Find and choose the right performance tools for any problem
     - Recognize the meaning of the events you're measuring
     - Optimize system CPU, user CPU, memory, network I/O, and disk I/O—and understand their interrelationships
-    - Fix CPU-bound, latency-sensitive, and I/O-bound applications, through case studies you can easily adapt to your own environment
+    - Fix CPU-bound, latency-sensitive, and I/O-bound applications, through case studies you can easily 
+      adapt to your own environment
     - Install and use oprofile, the advanced systemwide profiler for Linux systems
 
 
