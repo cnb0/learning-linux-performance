@@ -2,16 +2,17 @@
 ## Optimizing Linux Performance :
 ```
 
-Superior application performance is more crucial than ever—and in today's complex production environments, it's tougher to ensure, too. 
-If you use Linux, you have extraordinary advantages: complete source code access, plus an exceptional array of optimization tools. 
-But the tools are scattered across the Internet. Many are poorly documented. And few experts know how to use them
-together to solve real problems. Now, one of those experts has written the definitive Linux tuning primer for every professional: 
-Optimizing Linux® Performance.
+- Superior application performance is more crucial than ever—and in today's complex production environments, 
+  it's tougher to ensure, too. 
+- If you use Linux, you have extraordinary advantages: complete source code access, plus an exceptional 
+  array of optimization tools. 
+- But the tools are scattered across the Internet. Many are poorly documented. And few experts know how to use them
+  together to solve real problems. Now, one of those experts has written the definitive Linux tuning primer for every professional: 
+  Optimizing Linux® Performance.
 
-Renowned Linux benchmarking specialist Phillip Ezolt introduces each of today's most important Linux optimization tools, 
-showing how they fit into a proven methodology for perfecting overall application performance. Using realistic examples,
-Ezolt shows developers how to pinpoint exact lines of source code that are impacting performance. He teaches sysadmins and
-application developers how to rapidly drill down to specific bottlenecks, so they can implement solutions more quickly. 
+Linux optimization tools,showing how they fit into a proven methodology for perfecting overall application performance. 
+shows developers how to pinpoint exact lines of source code that are impacting performance. 
+so they can implement solutions more quickly. 
 
 How to:
 
