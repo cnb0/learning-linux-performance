@@ -1,3 +1,4 @@
+```
 1. Tools Method
         - The tools method is a process of iterating over available tools, 
           examining key metrics they provide. While this is a simple methodology, 
@@ -17,14 +18,16 @@
 
             - pidstat/prstat: Break down the top CPU consumers into user- and system-time. 
 
-            - perf/dtrace/stap/oprofile: Profile CPU usage stack traces for either user- or kernel-time, to identify why the CPUs are in use. 
+            - perf/dtrace/stap/oprofile: Profile CPU usage stack traces for either user- or kernel-time, 
+              to identify why the CPUs are in use. 
 
-            - perf/cpustat: Measure CPI.If an issue is found, examine all fields from the available tools to learn more context. 
+            - perf/cpustat: Measure CPI.If an issue is found, examine all fields from the available 
+                            tools to learn more context. 
 
 
 2.  USE Method
-        - The USE method is for identifying bottlenecks and errors across all components, early in a performance investigation,
-           before deeper and more time-consuming strategies are followed.
+        - The USE method is for identifying bottlenecks and errors across all components, early in a 
+          performance investigation, before deeper and more time-consuming strategies are followed.
         
         - For each CPU, check for
                 - Utilization: 
@@ -51,7 +54,8 @@
                 - What types of stall cycles are encountered?
 4. Profiling
             - Profiling builds a picture of the target for study. 
-            - CPU usage can be profiled by sampling the state of the CPUs at timed intervals, following these steps:
+            - CPU usage can be profiled by sampling the state of the CPUs at timed intervals, 
+              following these steps:
                     - Select the type of profile data to capture, and the rate.
                     - Begin sampling at a timed interval.
                     - Wait while the activity of interest occurs.
@@ -87,17 +91,20 @@
             - Are there software-imposed CPU usage limits (resource controls) present? What are they?
         
       - The answers to these questions may reveal previously overlooked configuration choices.
-        - The last question is especially true for cloud computing environments, where CPU usage is commonly limited.
+        - The last question is especially true for cloud computing environments, where 
+          CPU usage is commonly limited.
 
 7. Priority Tuning
-        - Unix has always provided a nice() system call for adjusting process priority, which sets a nice-ness value. 
+        - Unix has always provided a nice() system call for adjusting process priority, 
+          which sets a nice-ness value. 
         - Positive nice values result in lower process priority (nicer), and 
         - negative values—which can be set only by the superuser (root)—result in higher priority
 
 8. Resource Controls
-        - The operating system may provide fine-grained controls for allocating CPU cycles to processes or groups of processes. 
-        - These may include fixed limits for CPU utilization and shares for a more flexible approach—allowing idle CPU cycles 
-          to be consumed based on a share value
+        - The operating system may provide fine-grained controls for allocating CPU cycles to 
+          processes or groups of processes. 
+        - These may include fixed limits for CPU utilization and shares for a more flexible approach—allowing
+          idle CPU cycles to be consumed based on a share value
 
 9. CPU Binding
 
@@ -108,6 +115,7 @@
                 - configuring a process to run only on a single CPU, or only on one CPU from a defined set. 
         - Exclusive CPU sets:
                 - partitioning a set of CPUs that can be used only by the process(es) assigned to them. 
-                - This can improve CPU cache further, as when the process is idle other processes cannot use the CPUs, leaving the caches warm.
+                - This can improve CPU cache further, as when the process is idle other processes cannot use the CPUs, 
+                  leaving the caches warm.
           
           On Linux-based systems, the exclusive CPU sets approach can be implemented using cpusets

@@ -1,5 +1,35 @@
 
+- How do I see how much free ram I really have?
+         - To see how much ram your applications could use without swapping, run free -m and look at the "available" column:
+```
+  $ free -m
+                total        used        free      shared  buff/cache   available
+  Mem:           1504        1491          13           0         855      792
+  Swap:          2047           6        2041
 
+  (On installations from before 2016, look at "free" column in the "-/+ buffers/cache" row instead.)
+
+  This is your answer in MiB. If you just naively look at "used" and "free", you'll think your ram is 99% full 
+  when it's really just 47%!
+```
+
+When should I start to worry about memory ?
+
+- A healthy Linux system with more than enough memory will, after running for a while, show the following expected and harmless behavior:
+
+            free memory is close to 0
+            used memory is close to total
+            available memory (or "free + buffers/cache") has enough room (let's say, 20%+ of total)
+            swap used does not change
+            
+- Warning signs of a genuine low memory situation that you may want to look into:
+
+            available memory (or "free + buffers/cache") is close to zero
+            swap used increases or fluctuates
+            dmesg | grep oom-killer shows the OutOfMemory-killer at work
+
+
+```
 Linux memory performance tools include the following: 
 
 - free: report free memory, with buffer cache and page cache .
