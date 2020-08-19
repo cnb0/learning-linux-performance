@@ -1,5 +1,6 @@
+# Linux performance monitoring process and tools
 
-
+```
 - Automate the display and collection of periodic performance data (bash, watch).
 - Record all commands and output displayed during a performance investigation (tee, script).
 - Import, analyze, and graph performance data (gnumeric).
@@ -8,9 +9,6 @@
 - Investigate runtime characteristics of an application (gdb).
 - Create performance tool/debugging-friendly applications (gcc).
 
-
-```
-
 - Automating and Recording Commands
 - Graphing and Analyzing Performance Statistics
 - Investigating the Libraries That an Application Uses
@@ -18,8 +16,8 @@
 
 
 - linux loadavg
-    - Linux load averages are "system load averages" that show the running thread (task) demand on the system 
-      as an average number of running plus waiting thread
+    - Linux load averages are "system load averages" that show the running thread (task)
+      demand on the system as an average number of running plus waiting thread
       
         $ uptime
             16:48:24 up  4:11,  1 user,  load average: 25.25, 23.40, 23.46
@@ -28,28 +26,33 @@
             25.72 23.19 23.35 42/3411 43603
 
             - If the averages are 0.0, then your system is idle.
-            - If the 1 minute average is higher than the 5 or 15 minute averages, then load is increasing.
-            - If the 1 minute average is lower than the 5 or 15 minute averages, then load is decreasing.
-            - If they are higher than your CPU count, then you might have a performance problem (it depends).
+            - If the 1 minute average is higher than the 5 or 15 minute averages, 
+              then load is increasing.
+            - If the 1 minute average is lower than the 5 or 15 minute averages, 
+              then load is decreasing.
+            - If they are higher than your CPU count, then you might have a 
+              performance problem (it depends).
 
-       - As a set of three, you can tell if load is increasing or decreasing, which is useful. 
-       - They can be also useful when a single value of demand is desired, such as for a cloud auto scaling rule.
+       - As a set of three, you can tell if load is increasing or decreasing
+       - They can be also useful when a single value of demand is desired, 
+         such as for a cloud auto scaling rule.
        - But to understand them in more detail is difficult without the aid of other metrics.
-       - A single value of 23 - 25, by itself, doesn't mean anything, but might mean something if the CPU count is known, and
-         if it's known to be a CPU-bound workload.
+       - A single value of 23 - 25, by itself, doesn't mean anything, but might 
+        mean something if the 
+         CPU count is known, and if it's known to be a CPU-bound workload.
 
 - On Linux, load averages are or "system load averages", for the system as a whole, 
-  measuring the number of threads that are working and waiting to work (CPU, disk, uninterruptible locks). 
+  measuring the number of threads that are working and waiting to work 
+  (CPU, disk, uninterruptible locks). 
   Put differently, it measures the number of threads that aren't completely idle. 
   Advantage: includes demand for different resources.
 
-
- ```
-
-# Better Metrics
-
 ```
-- When Linux load averages increase, you know you have higher demand for resources (CPUs, disks, and some locks)
+ ```
+# Better Metrics
+```
+- When Linux load averages increase, you know you have higher demand for resources 
+  (CPUs, disks, and some locks)
 
         - per-CPU utilization: eg, using mpstat -P ALL 1
         - per-process CPU utilization: eg, top, pidstat 1, etc.
@@ -123,13 +126,15 @@
 - iostat – Montor Linux average CPU load and disk activity
 
 - sar – Monitor, collect and report Linux system activity
-    - sar command used to collect, report, and save system activity information. To see network counter, enter:
-            $ sar -n DEV | more
+    - sar command used to collect, report, and save system activity information. 
+      To see network counter,
+           $ sar -n DEV | more
 
     - You can also display real time usage using sar:
             $ sar 4 5
 - mpstat – Monitor multiprocessor usage on Linux
-        mpstat command displays activities for each available processor, processor 0 being the first one. 
+        mpstat command displays activities for each available processor, 
+         processor 0 being the first one. 
             - to display average CPU utilization per processor:
                 $ mpstat -P ALL
 - pmap – Montor process memory usage on Linux
@@ -166,11 +171,12 @@
     - atop is a very powerful and an interactive monitor to view the load on a Linux system.
        It displays the most critical hardware resources from a performance point of view. 
        You can quickly see CPU, memory, disk and network performance. 
-     - It shows which processes are responsible for the indicated load concerning CPU and memory load on a process level.
+     - It shows which processes are responsible for the indicated load concerning CPU and 
+       memory load on a process level.
 
 - ac and lastcomm –
-        You must monitor process and login activity on your Linux server. The psacct or acct package contains several utilities 
-        for monitoring process activities, including:
+        You must monitor process and login activity on your Linux server. The psacct or acct package
+         contains several utilities for monitoring process activities, including:
         - ac command : Show statistics about users’ connect time
         - lastcomm command : Show info about about previously executed commands
         - accton command : Turns process accounting on or off
@@ -179,7 +185,8 @@
 - nethogs- Find out PIDs that using most bandwidth on Linux
         - NetHogs is a small but handy net top tool. 
         - It groups bandwidth by process name such as Firefox, wget and so on. 
-         - If there is a sudden burst of network traffic, start NetHogs. You will see which PID is causing bandwidth surge.
+         - If there is a sudden burst of network traffic, start NetHogs. You will see which 
+           PID is causing bandwidth surge.
             $ sudo nethogs
 
 -  iftop – Show bandwidth usage on an interface by host
@@ -192,7 +199,8 @@
                $ vnstat
 - nmon – Linux systems administrator, tuner, benchmark tool
            - nmon is a Linux sysadmin’s ultimate tool for the tunning purpose.
-             It can show CPU, memory, network, disks, file systems, NFS, top process resources and partition information from the cli.
+             It can show CPU, memory, network, disks, file systems, NFS, top process resources and 
+             partition information from the cli.
                 $ nmon
 
 - Nagios – Linux server/network monitoring
