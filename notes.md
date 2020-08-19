@@ -14,7 +14,6 @@
 - Investigating the Libraries That an Application Uses
 - Creating and Debugging Applications
 
-
 - linux loadavg
     - Linux load averages are "system load averages" that show the running thread (task)
       demand on the system as an average number of running plus waiting thread
@@ -47,10 +46,9 @@
   Put differently, it measures the number of threads that aren't completely idle. 
   Advantage: includes demand for different resources.
 
-```
- ```
+
 # Better Metrics
-```
+
 - When Linux load averages increase, you know you have higher demand for resources 
   (CPUs, disks, and some locks)
 
