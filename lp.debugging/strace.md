@@ -1,7 +1,7 @@
  
  ## [strace](https://strace.io/)
  
- 
+```
 1. attach to an already running process.
 
      -e trace=%desc     Trace all file descriptor related system calls.
