@@ -19,20 +19,25 @@
 - Static performance tuning focuses on issues of the configured environment. 
   For application performance, examine the following aspects of the static configuration:
 
-        - What version of the application is running? Are there newer versions? Do their release notes mention performance improvements?
-        - What known performance issues are there with the application? Is there a bug database that can be searched?
+        - What version of the application is running? Are there newer versions? 
+          Do their release notes mention performance improvements?
+        - What known performance issues are there with the application? 
+          Is there a bug database that can be searched?
         - How is the application configured?
-        - If it was configured or tuned differently from the defaults, what was the reason? (Was it based on measurements and analysis, or guesswork?)
+        - If it was configured or tuned differently from the defaults, what was the reason? 
+          (Was it based on measurements and analysis, or guesswork?)
         - Does the application employ a cache of objects? How is it sized?
         - Does the application run concurrently? How is that configured (e.g., thread pool sizing)?
-        - Is the application running in a special mode? (For example, debug mode may have been enabled and be reducing performance.)
+        - Is the application running in a special mode? (For example, debug mode may have been 
+          enabled and be reducing performance.)
         - What system libraries does the application use? What versions are they?
         - What memory allocator does the application use?
         - Is the application configured to use large pages for its heap?
-        - Is the application compiled? What version of the compiler? What compiler options and optimizations? 64-bit?
+        - Is the application compiled? What version of the compiler? What compiler options and 
+          optimizations? 64-bit?
         - Has the application encountered an error, and is it now running in a degraded mode?
-        - Are there system-imposed limits or resource controls for CPU, memory, file system, disk, or network usage? 
-         (These are common with cloud computing.)
+        - Are there system-imposed limits or resource controls for CPU, memory, file system, disk,
+          or network usage?   (These are common with cloud computing.)
 
                Answering these questions may reveal configuration choices that have been overlooked.
 
@@ -41,12 +46,14 @@
 
         - Determine whether an application’s runtime is spent in the kernel or application.
         - Determine what library and system calls an application is making and how long they are taking.
-        - Profile an application to figure out what source lines and functions are taking the longest time to complete.
+        - Profile an application to figure out what source lines and functions are taking 
+          the longest time to complete.
         - track the CPU performance bottlenecks of individual processes. 
-        - determine how an application was spending its time by attributing the time spent to the Linux kernel, system libraries, or
-          even to the application itself. 
+        - determine how an application was spending its time by attributing the time spent to 
+          the Linux kernel, system libraries, or even to the application itself. 
         - which calls were made to the kernel and system libraries and how long each took to complete. 
-        - profile an application and determine the particular line of source code that was spending a large amount of time. 
+        - profile an application and determine the particular line of source code that was 
+          spending a large amount of time. 
         - application that hogs the CPU and use these tools to find the exact functions that are spending all the time.
 
                         - Process Performance Statistics
@@ -66,7 +73,8 @@
                                 -  For Java  
                                         -Xrunhprof
 
-- Memory bound process-   diagnose an application’s interaction with the memory subsystem as managed by the Linux kernel and the CPU
+- Memory bound process-   diagnose an application’s interaction with the memory subsystem as 
+  managed by the Linux kernel and the CPU
 
 
         - Determine how much memory an application is using (ps, /proc).
