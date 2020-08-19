@@ -70,7 +70,8 @@
                 $ strace -t -o strace_t.txt ifconfig eth0 > /dev/null
         - Time printed will include the microseconds.
                 $ strace -tt -o strace_tt.txt ifconfig eth0 > /dev/null
-        - Time printed will include the microseconds and the leading portion will be printed as the number of seconds since the epoch.
+        - Time printed will include the microseconds and the leading portion will be printed as the number 
+          of seconds since the epoch.
                 $ strace -ttt -o strace_ttt.txt ifconfig eth0 > /dev/null
                 
 9. follow system calls if a process fork, -f option follows child process
