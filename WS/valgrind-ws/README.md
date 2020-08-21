@@ -48,22 +48,25 @@ Techniques for Debugging Memory Leaks & Errors
 		 - Invalid read
 
 		- General advice for memory leaks:
-				Make sure your dynamically allocated memory does in fact get freed.
-				Don't allocate memory and forget to assign the pointer.
-				Don't overwrite a pointer with a new one unless the old memory is freed.
+			Make sure your dynamically allocated memory does in fact get freed.
+			Don't allocate memory and forget to assign the pointer.
+			Don't overwrite a pointer with a new one unless the old memory is freed.
 		- General advice for memory errors:
 			    Access and write to addresses and indices you're sure belong to you. 
-			    Memory errors are different from leaks; they're often just IndexOutOfBoundsException type problems.
+			    Memory errors are different from leaks; they're often just 
+			    IndexOutOfBoundsException type problems.
 			    Don't access or write to memory after freeing it.
-		- Sometimes your leaks/errors can be linked to one another, much like an IDE discovering that you haven't typed a closing bracket yet. 
-		  Resolving one issue can resolve others, so look for one that looks a good culprit and apply some of these ideas:
-				- List out the functions in your code that depend on/are dependent on the "offending" code that has the memory error. 
-				  Follow the program's execution (maybe even in gdb  perhaps), and 
-				  look for precondition/postcondition errors. 
-				  The idea is to trace your program's execution while focusing on the lifetime of allocated memory.
-				- Try commenting out the "offending" block of code (within reason, so your code still compiles). 
-				  If the Valgrind error goes away, you've found where it is.
-```
+		- Sometimes your leaks/errors can be linked to one another, much like 
+		  an IDE discovering that you haven't typed a closing bracket yet. 
+		  Resolving one issue can resolve others, so look for one that looks a 
+		  good culprit and apply some of these ideas:
+		    - List out the functions in your code that depend on/are dependent on the "offending" 
+		      code that has the memory error. 
+		      Follow the program's execution (maybe even in gdb  perhaps), and 
+		      look for precondition/postcondition errors. 
+		     The idea is to trace your program's execution while focusing on the lifetime of allocated memory.
+		   - Try commenting out the "offending" block of code (within reason, so your code still compiles). 
+		     If the Valgrind error goes away, you've found where it is.
 
 
 # How to build sample programs
