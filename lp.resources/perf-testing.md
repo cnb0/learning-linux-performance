@@ -119,7 +119,7 @@
 
 - Hints and tips for performance testing
 
-            - When you adopt performance testing practice, keep these tips in mind:
+            - When you adopt performance testing practice, keep these tips  :
 
             - Evaluate the performance characteristics of the software system 
               after the functional and system testing is completed.
@@ -131,3 +131,9 @@
                             b. Run performance tests at the application or system level for user experiences 
                                under normal and maximum loads.Capture the performance metrics and 
                                verify that the performance objectives are met
+                               
+ - Output artifacts
+        - Performance testing typically produces these output artifacts:
+               - Performance test plan
+               - Performance test scripts
+               - Performance test report
